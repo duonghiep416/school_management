@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClassController;
 
 
 /*
@@ -55,6 +56,13 @@ Route::get('admin/admin/edit/{id}',[AdminController::class,'edit']);
 Route::post('admin/admin/edit/{id}',[AdminController::class,'update']);
 Route::get('admin/admin/delete/{id}',[AdminController::class,'delete']);
 
+// Class URL
+Route::get('admin/class/list',[ClassController::class,'list']);
+Route::get('admin/class/add',[ClassController::class,'add']);
+Route::post('admin/class/add',[ClassController::class,'insert']);
+Route::get('admin/class/edit/{id}',[ClassController::class,'edit']);
+Route::post('admin/class/edit/{id}',[ClassController::class,'update']);
+Route::get('admin/class/delete/{id}',[ClassController::class,'delete']);
 
 
 
