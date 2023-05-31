@@ -172,6 +172,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{ url('admin/change_password')}}" class="nav-link @if(Request::segment(2) =='change_password') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Change Password
+              </p>
+            </a>
+          </li>
+
       @elseif(Auth::user()->user_type == 2)
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
@@ -179,6 +188,15 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url('teacher/change_password')}}" class="nav-link @if(Request::segment(2) =='change_password') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Change Password
               </p>
             </a>
           </li>
@@ -194,6 +212,16 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{ url('student/change_password')}}" class="nav-link @if(Request::segment(2) =='change_password') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Change Password
+              </p>
+            </a>
+          </li>
+
       @elseif(Auth::user()->user_type == 4)
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
@@ -201,6 +229,14 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('parent/change_password')}}" class="nav-link @if(Request::segment(2) =='change_password') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Change Password
               </p>
             </a>
           </li>
