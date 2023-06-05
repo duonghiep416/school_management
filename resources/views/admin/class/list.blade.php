@@ -101,8 +101,8 @@
                             <td>{{ $value->created_by_name }}</td>
                             <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                             <td>
-                                <a href="{{url('admin/class/edit/'.$value -> id)}}" class ="brn btn-primary">Edit</a>
-                                <a href="{{url('admin/class/delete/'.$value -> id)}}" class ="brn btn-danger">Delete</a>
+                                <a href="{{url('admin/class/edit/'.$value -> id)}}" class ="brn btn-primary btn-sm">Edit</a>
+                                <a href="{{url('admin/class/delete/'.$value -> id)}}" class ="brn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                     @endforeach
