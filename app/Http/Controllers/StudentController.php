@@ -49,6 +49,8 @@ class StudentController extends Controller
         $student->admission_number = trim($request->admission_number);
         $student->roll_number = trim($request->roll_number);
         $student->class_id = trim($request->class_id);
+        $student->gender = trim($request->gender);
+
 
         if (!empty($request->date_of_birth)) {
         $student->date_of_birth = trim($request->date_of_birth);
@@ -124,6 +126,8 @@ class StudentController extends Controller
             $student->admission_number = trim($request->admission_number);
             $student->roll_number = trim($request->roll_number);
             $student->class_id = trim($request->class_id);
+            $student->gender = trim($request->gender);
+
     
             if (!empty($request->date_of_birth)) 
             {

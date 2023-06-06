@@ -117,7 +117,6 @@
                             <td>{{ $value->created_by_name }}</td>
                             <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                             <td>
-                      <th>Name</th>
                                 <a href="{{url('admin/subject/edit/'.$value -> id)}}" class ="brn btn-primary btn-sm">Edit</a>
                                 <a href="{{url('admin/subject/delete/'.$value -> id)}}" class ="brn btn-danger btn-sm">Delete</a>
                             </td>
