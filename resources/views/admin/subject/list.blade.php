@@ -92,7 +92,6 @@
                       <th>#</th>
                       <th>Subject Name</th>
                       <th>Subject Type</th>
-
                       <th>Status</th>
                       <th>Created By</th>
                       <th>Created Date</th>

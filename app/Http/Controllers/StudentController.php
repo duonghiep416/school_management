@@ -1,13 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ClassModel;
 use Str;
-
 use Hash;
 use Auth;
 
@@ -34,7 +31,7 @@ class StudentController extends Controller
         request()->validate([
             'email' => 'required|email|unique:users',
             'blood_group' => 'max:10',
-            'mobile_numer' => 'max:15',
+            'mobile_number' => 'max:15',
             'admission_number' => 'max:50',
             'roll_number' => 'max:50',
             'caster' => 'max:50',

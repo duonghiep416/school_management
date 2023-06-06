@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Edit Student</h1>
+                    <h1>Add New Student</h1>
                 </div>
             </div>
         </div>
@@ -35,30 +35,6 @@
                                 </div>
 
                                 <div class="form-group col-md-6" >
-                                    <label> Admission Number <span style="color:red;">*</span></label>
-                                    <input type ="text" class="form-control" name="admission_number" value="{{ old('admission_nummber', $getRecord->admission_nummber) }}" required placeholder="Admission Number">
-                                    <div style = "color:red">{{ $errors->first('admission_nummber') }}</div>
-                                </div>
-                                <div class="form-group col-md-6" >
-                                    <label> Roll Number <span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="roll_number" value="{{ old('roll_number', $getRecord->roll_number) }}" required placeholder="Roll Number">
-                                    <div style = "color:red">{{ $errors->first('roll_number') }}</div>
-                                </div>
-
-                                <div class="form-group col-md-6" >
-                                    <label> Class<span style="color:red;">*</span></label>
-                                    <select class="form-control" required name="class_id">
-                                        <option value="">Select Class</option>
-                                        @foreach ($getClass as $value)
-                                        <option {{ (old('class_id', $getRecord->class_id) == $value->id) ? 'selected' : '' }} value="{{$value->id}}">{{$value->name}}</option>
-
-                                            
-                                        @endforeach
-                                    </select>
-                                    <div style = "color:red">{{ $errors->first('class_id') }}</div>
-                                </div>
-
-                                <div class="form-group col-md-6" >
                                     <label> Gender<span style="color:red;">*</span></label>
                                     <select class="form-control" required name="gender">
                                         <option value="">Select Gender</option>
@@ -70,33 +46,21 @@
                                 </div>
 
                                 <div class="form-group col-md-6" >
-                                    <label> Day Of Birth<span style="color:red;">*</span></label>
-                                    <input type ="date" class="form-control" required name="date_of_birth" value="{{ old('date_of_birth', $getRecord->date_of_birth) }}" >
-                                    <div style = "color:red">{{ $errors->first('date_of_birth') }}</div>
+                                    <label> Occupation <span style="color:red;"></span></label>
+                                    <input type ="text" class="form-control" name="occupation" value="{{ old('occupation', $getRecord->occupation) }}"  placeholder="Occupation">
+                                    <div style = "color:red">{{ $errors->first('occupation') }}</div>
                                 </div>
 
                                 <div class="form-group col-md-6" >
-                                    <label> Caste <span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="caste" value="{{ old('caste', $getRecord->caste) }}"  placeholder="Caste">
-                                    <div style = "color:red">{{ $errors->first('caste') }}</div>
-                                </div>
-
-                                <div class="form-group col-md-6" >
-                                    <label> Religion <span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="religion" value="{{ old('religion', $getRecord->religion) }}"  placeholder="Religion">
-                                    <div style = "color:red">{{ $errors->first('religion') }}</div>
-                                </div>
-
-                                <div class="form-group col-md-6" >
-                                    <label> Mobile Number <span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="mobile_number" value="{{ old('mobile_number', $getRecord->mobile_number) }}"  placeholder=" Mobile Number">
+                                    <label> Mobile Number <span style="color:red;">*</span></label>
+                                    <input type ="text" class="form-control" name="mobile_number" required value="{{ old('mobile_number', $getRecord->mobile_number) }}"  placeholder=" Mobile Number">
                                     <div style = "color:red">{{ $errors->first('mobile_number') }}</div>
                                 </div>
+
                                 <div class="form-group col-md-6" >
-                                    <label> Admission Date <span style="color:red;">*</span></label>
-                                    <input type ="date" class="form-control" name="admission_date" value="{{ old('admission_date', $getRecord->admission_date) }}"  placeholder=" Admission Date" required>
-                                    <div style = "color:red">{{ $errors->first('admission_date') }}</div>
-                                   
+                                    <label> Address <span style="color:red;">*</span></label>
+                                    <input type ="text" class="form-control" name="address" required value="{{ old('address', $getRecord->address) }}"  placeholder="Address">
+                                    <div style = "color:red">{{ $errors->first('address') }}</div>
                                 </div>
 
                                 <div class="form-group col-md-6" >
@@ -106,24 +70,6 @@
                                     @if(!empty($getRecord->getProfile()))
                                     <img src="{{ $getRecord->getProfile() }}" style="width: 100px;">
                                     @endif
-                                </div>
-
-                                <div class="form-group col-md-6" >
-                                    <label> Blood Group <span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="blood_group" value="{{ old('blood_group', $getRecord->blood_group) }}" placeholder="Blood Group">
-                                    <div style = "color:red">{{ $errors->first('blood_group') }}</div>
-                                </div>
-
-                                <div class="form-group col-md-6" >
-                                    <label> Height<span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="height" value="{{ old('height', $getRecord->height) }}" placeholder="Height">
-                                    <div style = "color:red">{{ $errors->first('height') }}</div>
-                                </div>
-
-                                <div class="form-group col-md-6" >
-                                    <label> Weight <span style="color:red;"></span></label>
-                                    <input type ="text" class="form-control" name="weight" value="{{ old('weight', $getRecord->weight) }}" placeholder="Weight">
-                                    <div style = "color:red">{{ $errors->first('weight') }}</div>
                                 </div>
 
                                 <div class="form-group col-md-6" >
@@ -151,6 +97,7 @@
                                 <label>Password<span style="color:red;"></span></label>
                                 <input type ="text" class="form-control" name="password" placeholder="Password">
                                 <p>Due you want to change password so Please add new password</p>
+
                             </div>
                         </div>
                         <div class="card-footer">
@@ -164,11 +111,11 @@
             </div>
         </div>
     </div>
+
+
     </section>
+
 </div>
- @endsection
 
 
-
-
-
+  @endsection
