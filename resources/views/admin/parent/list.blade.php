@@ -159,6 +159,8 @@
                     <td>
                       <a href="{{url('admin/parent/edit/'.$value -> id)}}" class ="brn btn-primary btn-sm">Edit</a>
                       <a href="{{url('admin/parent/delete/'.$value -> id)}}" class ="brn btn-danger btn-sm">Delete</a>
+                      <a href="{{url('admin/parent/my_student/'.$value -> id)}}" class ="brn btn-primary btn-sm">My Student</a>
+
                     </td>
 
 
