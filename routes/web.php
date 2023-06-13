@@ -10,6 +10,9 @@ use App\Http\Controllers\ClassSubjectController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ParentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\AssignClassTeacherController;
+
 
 
 
@@ -82,6 +85,13 @@ Route::get('admin/parent/my_student/{id}',[ParentController::class,'myStudent'])
 Route::get('admin/parent/assign_student_parent/{student_id}/{parent_id}',[ParentController::class,'AssignStudentParent']);
 Route::get('admin/parent/assign_student_parent_delete/{student_id}',[ParentController::class,'AssignStudentParentDelete']);
 
+//teacher
+Route::get('admin/teacher/list',[TeacherController::class,'list']);
+Route::get('admin/teacher/add',[TeacherController::class,'add']);
+Route::post('admin/teacher/add',[TeacherController::class,'insert']);
+Route::get('admin/teacher/edit/{id}',[TeacherController::class,'edit']);
+Route::post('admin/teacher/edit/{id}',[TeacherController::class,'update']);
+Route::get('admin/teacher/delete/{id}',[TeacherController::class,'delete']);
 
 
 

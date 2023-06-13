@@ -36,8 +36,8 @@
 
                                 <div class="form-group col-md-6" >
                                     <label> Admission Number <span style="color:red;">*</span></label>
-                                    <input type ="text" class="form-control" name="admission_number" value="{{ old('admission_nummber', $getRecord->admission_nummber) }}" required placeholder="Admission Number">
-                                    <div style = "color:red">{{ $errors->first('admission_nummber') }}</div>
+                                    <input type ="text" class="form-control" name="admission_number" value="{{ old('admission_number', $getRecord->admission_number) }}" required placeholder="Admission Number">
+                                    <div style = "color:red">{{ $errors->first('admission_number') }}</div>
                                 </div>
                                 <div class="form-group col-md-6" >
                                     <label> Roll Number <span style="color:red;"></span></label>
