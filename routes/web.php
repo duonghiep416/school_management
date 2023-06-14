@@ -137,6 +137,9 @@ Route::get('teacher/dashboard',[DashboardController::class,'dashboard']);
 Route::get('teacher/change_password',[UserController::class,'change_password']);
 Route::post('teacher/change_password',[UserController::class,'update_change_password']);
   
+Route::get('teacher/account',[UserController::class,'MyAccount']);
+Route::post('teacher/account',[UserController::class,'UpdateMyAccount']);
+
 });
 
 Route::group(['middleware'=> 'student'], function () {
