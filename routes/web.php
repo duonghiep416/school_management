@@ -147,6 +147,7 @@ Route::get('student/dashboard',[DashboardController::class,'dashboard']);
 
 Route::get('student/account',[UserController::class,'MyAccount']);
 Route::post('student/account',[UserController::class,'UpdateMyAccountStudent']);
+
 Route::get('student/change_password',[UserController::class,'change_password']);
 Route::post('student/change_password',[UserController::class,'update_change_password']);
    
@@ -154,6 +155,10 @@ Route::post('student/change_password',[UserController::class,'update_change_pass
 
 Route::group(['middleware'=> 'parent'], function () {
 Route::get('parent/dashboard',[DashboardController::class,'dashboard']);
+
+Route::get('parent/account',[UserController::class,'MyAccount']);
+Route::post('parent/account',[UserController::class,'UpdateMyAccountParent']);
+
 Route::get('parent/change_password',[UserController::class,'change_password']);
 Route::post('parent/change_password',[UserController::class,'update_change_password']);
   

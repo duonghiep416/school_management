@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use Hash;
+use Str;
 
 
 class UserController extends Controller
@@ -25,6 +26,10 @@ class UserController extends Controller
         elseif(Auth::user()->user_type == 3)
         {
             return view('student.my_account', $data); 
+        }
+        elseif(Auth::user()->user_type == 4)
+        {
+            return view('parent.my_account', $data); 
         }
        
     }
@@ -132,6 +137,43 @@ class UserController extends Controller
             $student->save();
        
             return redirect()->back()->with('success', "Account Successfully Updated");
+    }
+
+    public function UpdateMyAccountParent(Request $request)
+    {
+        $id = Auth::user()->id;
+        //dd($request->all());
+        request()->validate([
+            'email' => 'required|email|unique:users',
+            'mobile_number' => 'max:15',
+            'address' => 'max:255',
+            'occupation' => 'max:255'
+        ]);
+        $parent = User::getSingle($id);;
+        $parent->last_name = trim($request->last_name);
+        $parent->gender = trim($request->gender);
+        $parent->occupation = trim($request->occupation);
+        $parent->address = trim($request->address);
+
+        if (!empty($request->file('profile_pic')))
+        {
+            if(!empty($parent->getProfile()))
+            {
+                unlink('upload/profile/' .$parent->profile_pic);
+            }
+            $ext = $request->file('profile_pic') -> getClientOriginalExtension();
+            $file = $request->file('profile_pic');
+            $randomStr = date('Ymdhis').Str::random(20);
+            $filename = strtolower($randomStr).'.'.$ext;
+            $file ->move('upload/profile/', $filename);
+            $parent->profile_pic = $filename;
+
+        }
+        $parent->mobile_number = trim($request->mobile_number);
+        $parent->email = trim($request->email);
+        $parent->save();
+        
+        return redirect()->back()->with('success', "Account Successfully Updated");
     }
 
     public function change_password()
