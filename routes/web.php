@@ -123,6 +123,9 @@ Route::get('admin/assign_subject/delete/{id}',[ClassSubjectController::class,'de
 Route::get('admin/assign_subject/edit_single/{id}',[ClassSubjectController::class,'edit_single']);
 Route::post('admin/assign_subject/edit_single/{id}',[ClassSubjectController::class,'update_single']);
 
+Route::get('admin/account',[UserController::class,'MyAccount']);
+Route::post('admin/account',[UserController::class,'UpdateMyAccountAdmin']);
+
 Route::get('admin/change_password',[UserController::class,'change_password']);
 Route::post('admin/change_password',[UserController::class,'update_change_password']);
 
