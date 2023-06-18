@@ -146,7 +146,7 @@
                     <tr>
                       <th>#</th>
                       <th>Profile Picture</th>
-                      <th>WStudent Name</th>
+                      <th>Student Name</th>
                       <th>Parent Name</th>
                       <th>Email</th>
                       <th>Admission Number</th>

@@ -287,6 +287,17 @@
             </a>
           </li>
 
+
+          <li class="nav-item">
+            <a href="{{ url('parent/my_student') }}" class="nav-link @if(Request::segment(2) =='my_student') active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                My Student
+              </p>
+            </a>
+          </li> 
+
+
           <li class="nav-item">
             <a href="{{ url('parent/account') }}" class="nav-link @if(Request::segment(2) =='account') active @endif">
               <i class="nav-icon fas fa-tachometer-alt"></i>
