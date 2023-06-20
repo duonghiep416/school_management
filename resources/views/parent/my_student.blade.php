@@ -65,6 +65,7 @@
                       <th>Height</th>
                       <th>Weight</th>
                       <th>Created Date</th>
+                      <th>Action</th>
                           
       
                           </tr>
@@ -101,13 +102,16 @@
                  
                     <td>{{ $value -> height }}</td>
                     <td>{{ $value -> weight }}</td>
-2                            <td>{{ date('d-m-Y H:i A', strtotime($value -> created_at)) }}</td>
+                    <td>{{ date('d-m-Y H:i A', strtotime($value -> created_at)) }}</td>
+                    <td>
+                      <a class="btn btn-primary btn-sm" href="{{ url('parent/my_student/subject/'.$value -> id) }}">Subject</a>
+                    </td>
                            
         
-                          </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
+                  </tr>
+                  @endforeach
+                    </tbody>
+                  </table>
                   <div style="padding: 10px; float: right;">
                   </div>
                 </div>
