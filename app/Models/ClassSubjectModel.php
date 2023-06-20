@@ -41,9 +41,6 @@ class ClassSubjectModel extends Model
                     ->paginate(8);
       
         return $return;
-
-                    
-                    
     }
 
     static public function MySubject($class_id)

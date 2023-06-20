@@ -5,10 +5,10 @@
       <div class="container-fluid">
          <div class="row mb-2">
             <div class="col-sm-6">
-               <h1>Add New Assign Subject</h1>
+               <h1>Add New Assign Class Teacher</h1>
             </div>
          </div>
-      </div>
+      </div>  
    </section>
    <section class="content">
       <div class="container-fluid">
@@ -28,15 +28,14 @@
                            </select>
                         </div>
                         <div class="form-group">
-                           <label>Subject Name</label>
-                           @foreach ($getSubject as $subject)
+                           <label>Teacher Name</label>
+                           @foreach ($getTeacher as $teacher)
                            <div>
                               <label style="font-weight: normal;">
-                              <input type="checkbox" value=" {{$subject-> id}}" name="subject_id[]"> {{$subject-> name}}
+                              <input type="checkbox" value=" {{$teacher-> id}}" name="teacher_id[]"> {{$teacher-> name}} {{$teacher-> last_name}}
                               </label>
                            </div>
                            @endforeach
-                           </select>
                         </div>
                         <div class="form-group">
                            <label>Status</label>
