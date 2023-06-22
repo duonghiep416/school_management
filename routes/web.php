@@ -133,6 +133,11 @@ Route::post('admin/change_password',[UserController::class,'update_change_passwo
 Route::get('admin/assign_class_teacher/list',[AssignClassTeacherController::class,'list']);
 Route::get('admin/assign_class_teacher/add',[AssignClassTeacherController::class,'add']);
 Route::post('admin/assign_class_teacher/add',[AssignClassTeacherController::class,'insert']);
+Route::get('admin/assign_class_teacher/edit/{id}',[AssignClassTeacherController::class,'edit']);
+Route::post('admin/assign_class_teacher/edit/{id}',[AssignClassTeacherController::class,'update']);
+Route::get('admin/assign_class_teacher/edit_single/{id}',[AssignClassTeacherController::class,'edit_single']);
+Route::post('admin/assign_class_teacher/edit_single/{id}',[AssignClassTeacherController::class,'update_single']);
+Route::get('admin/assign_class_teacher/delete/{id}',[AssignClassTeacherController::class,'delete']);
 
   
 });

@@ -72,6 +72,7 @@ class ClassSubjectController extends Controller
 
        
     }
+    
     public function update(Request $request)
     {
         ClassSubjectModel::deleteSubject($request->class_id);
