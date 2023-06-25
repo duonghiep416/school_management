@@ -151,6 +151,9 @@ Route::post('teacher/change_password',[UserController::class,'update_change_pass
 Route::get('teacher/account',[UserController::class,'MyAccount']);
 Route::post('teacher/account',[UserController::class,'UpdateMyAccount']);
 
+
+Route::get('teacher/my_student',[StudentController::class,'MyStudent']);
+
 Route::get('teacher/my_class_subject',[AssignClassTeacherController::class,'MyClassSubject']);
 
 });
