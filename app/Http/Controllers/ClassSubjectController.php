@@ -46,7 +46,7 @@ class ClassSubjectController extends Controller
                 } 
                 
             }
-            return redirect('admin/assign_subject/list')->with('success', "Subject Sucessfully Asign to Class");
+            return redirect('admin/assign_subject/list')->with('success', "Subject Successfully Assign to Class");
         }
         else {
             return redirect()->back()->with('error', 'Due to some error please try again.');
@@ -98,8 +98,6 @@ class ClassSubjectController extends Controller
             }
         }
         return redirect('admin/assign_subject/list')->with('success', "Subject Sucessfully Asign to Class");
-
-
     }
 
    public function delete($id)

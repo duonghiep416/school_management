@@ -12,6 +12,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ParentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AssignClassTeacherController;
+use App\Http\Controllers\ClassTimetableController;
 
 
 
@@ -122,6 +123,10 @@ Route::post('admin/assign_subject/edit/{id}',[ClassSubjectController::class,'upd
 Route::get('admin/assign_subject/delete/{id}',[ClassSubjectController::class,'delete']);
 Route::get('admin/assign_subject/edit_single/{id}',[ClassSubjectController::class,'edit_single']);
 Route::post('admin/assign_subject/edit_single/{id}',[ClassSubjectController::class,'update_single']);
+
+Route::get('admin/class_timetable/list',[ClassTimetableController::class,'list']);
+Route::post('admin/class_timetable/get_subject',[ClassTimetableController::class,'get_subject']);
+
 
 Route::get('admin/account',[UserController::class,'MyAccount']);
 Route::post('admin/account',[UserController::class,'UpdateMyAccountAdmin']);
