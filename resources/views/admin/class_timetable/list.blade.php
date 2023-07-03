@@ -30,6 +30,8 @@
           <!-- /.col -->
           <div class="col-md-12">
 
+          @include('_message')
+
                 <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Search Assign Subject</h3>
@@ -70,7 +72,11 @@
                     </form>
                 </div>
 
-            @if(!empty(Request::get('class_id')) && !empty(Request::get('subject_id')))
+           @if(!empty(Request::get('class_id')) && !empty(Request::get('subject_id')))
+           <form action="{{ url('admin/class_timetable/add') }}" method="post">
+           {{csrf_field()}}
+           <input type="hidden" name="subject_id" value="{{ Request::get('subject_id') }}">
+           <input type="hidden" name="class_id" value="{{ Request::get('class_id') }}">
               <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Class Timetable</h3>
@@ -89,19 +95,28 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @php
+                      $i = 1;
+                    @endphp
                     @foreach ($week as $value)
                       <tr>
-                        <th>{{ $value['week_name'] }}</th>
+                        <th>
+                        <input type="hidden" name="timetable[{{ $i }}][week_id]" value="{{ $value['week_id'] }}">
+                          {{ $value['week_name'] }}
+                        </th>
                         <td>
-                        <input type="time" name="start_time" class="form-control">
+                        <input type="time" name="timetable[{{ $i }}][start_time]" value="{{ $value['start_time'] }}" class="form-control">
                         </td>
                         <td>
-                        <input type="time" name="end_time" class="form-control">
+                        <input type="time" name="timetable[{{ $i }}][end_time]" value="{{ $value['end_time'] }}" class="form-control">
                         </td>
                         <td>
-                        <input type="text" style="width: 200px;" name="room_number" class="form-control">
+                        <input type="text" style="width: 200px;" value="{{ $value['room_number'] }}" name="timetable[{{ $i }}][room_number]" class="form-control">
                         </td>
                       </tr>
+                      @php
+                      $i++;
+                    @endphp
                     @endforeach
                   </tbody>
                 </table>
@@ -111,6 +126,8 @@
               </div>
               <!-- /.card-body -->
             </div>
+
+            </form>
             @endif
 
             
