@@ -40,6 +40,7 @@
                               <th>Subject Name</th>
                               <th>Subject Type</th>
                               <th>Created Date</th>
+                              <th>Action</th>
                             
                            </tr>
                         </thead>
@@ -52,6 +53,10 @@
                             <td>{{ $value->subject_type }}</td>
                             <td>{{ $value->teacher_name }}</td>
                             <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                            <td>
+                              <a href="{{ url('teacher/my_class_subject/class_timetable/'.$value->class_id.'/'.$value->subject_id) }}" class="btn btn-primary">My Class Timetable</a>
+                            </td>
+
 
                            
                         </tr>

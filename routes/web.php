@@ -161,6 +161,7 @@ Route::post('teacher/account',[UserController::class,'UpdateMyAccount']);
 Route::get('teacher/my_student',[StudentController::class,'MyStudent']);
 
 Route::get('teacher/my_class_subject',[AssignClassTeacherController::class,'MyClassSubject']);
+Route::get('teacher/my_class_subject/class_timetable/{class_id}/{subject_id}',[ClassTimetableController::class,'MyTimetableTeacher']);
 
 });
 
