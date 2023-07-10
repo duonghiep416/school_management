@@ -190,6 +190,10 @@ Route::post('parent/account',[UserController::class,'UpdateMyAccountParent']);
 Route::get('parent/change_password',[UserController::class,'change_password']);
 Route::post('parent/change_password',[UserController::class,'update_change_password']);
 Route::get('parent/my_student/subject/{student_id}',[SubjectController::class,'ParentStudentSubject']);
+Route::get('parent/my_student/subject/class_timetable/{class_id}/{subject_id}/{student_id}',[ClassTimetableController::class,'MyTimetableParent']);
+ 
+
+
 
 
 Route::get('parent/my_student',[ParentController::class,'myStudentParent']);
