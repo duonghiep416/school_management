@@ -13,6 +13,9 @@ use App\Http\Controllers\ParentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AssignClassTeacherController;
 use App\Http\Controllers\ClassTimetableController;
+use App\Http\Controllers\ExaminationsController;
+
+
 
 
 
@@ -60,6 +63,7 @@ Route::get('admin/dashboard', function () {
 
 Route::group(['middleware'=> 'admin'], function () {
 Route::get('admin/dashboard',[DashboardController::class,'dashboard']);
+
 Route::get('admin/admin/list',[AdminController::class,'list']);
 Route::get('admin/admin/add',[AdminController::class,'add']);
 Route::post('admin/admin/add',[AdminController::class,'insert']);
@@ -145,7 +149,16 @@ Route::get('admin/assign_class_teacher/edit_single/{id}',[AssignClassTeacherCont
 Route::post('admin/assign_class_teacher/edit_single/{id}',[AssignClassTeacherController::class,'update_single']);
 Route::get('admin/assign_class_teacher/delete/{id}',[AssignClassTeacherController::class,'delete']);
 
-  
+Route::get('admin/examinations/exam/list',[ExaminationsController::class,'exam_list']);
+Route::get('admin/examinations/exam/add',[ExaminationsController::class,'exam_add']);
+Route::post('admin/examinations/exam/add',[ExaminationsController::class,'exam_insert']);
+Route::get('admin/examinations/exam/edit/{id}',[ExaminationsController::class,'exam_edit']);
+Route::post('admin/examinations/exam/edit/{id}',[ExaminationsController::class,'exam_update']);
+Route::get('admin/examinations/exam/delete/{id}',[ExaminationsController::class,'exam_delete']);
+
+
+
+
 });
 
 
